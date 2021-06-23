@@ -4,19 +4,38 @@ temperatura = saida.temperatura;
 potencia = saida.potencia;
 velocidade = saida.velocidade;
 
-figure
+
 size = length(temperatura);
 amostras = linspace(1,size,size);
-plot(amostras, temperatura)
-grid on
+
+% figure
+% plot(amostras, temperatura)
+% grid on
+% 
+% figure
+% plot(amostras, potencia)
+% grid on
+% 
+% figure
+% plot(amostras, velocidade)
+% grid on
 
 figure
-plot(amostras, potencia)
+subplot(2,1,1)
 grid on
+plot(amostras, temperatura,'linewidth',1.5)
+legend('Temperatura')
+xlabel('Tempo (s)')
+ylabel('Temperatura °C')
+title('Temperatura em função da velocidade do ventilador')
+subplot(2,1,2)
+grid on
+plot(amostras, velocidade,'linewidth',1.5)
+legend('Velocidade')
+xlabel('Tempo (s)')
+ylabel('Velocidade (rpm)')
 
-figure
-plot(amostras, velocidade)
-grid on
+
 
 %definir intervalos de tempo de regime permanente (regiao logo antes dos degraus)
 %intervalo 1
